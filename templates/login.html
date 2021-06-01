@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<title>Login</title>
+	</head>
+
+	<body>
+		<form class="" action="submit" method="post">{% csrf_token %}
+
+			<label>User: </label>
+			<input type="text" name="username">
+			<br>
+			<label>Password: </label>
+			<input type="password" name="password">
+			<br>
+			<button type="submit" name="button">Entrar</button>
+		</form>
+
+		<br>
+
+		{% for message in messages %}
+			<div align="center">
+				<strong>Erro! </strong>{{ message }}
+			</div>
+		{% endfor %}
+
+	</body>
+</html>

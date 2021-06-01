@@ -1,0 +1,18 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+<form action="submit" method="post">{% csrf_token %}
+
+	<label>Email: </label>
+	<input type="text" name="email">
+	<br>
+	<label>CPF: </label>
+	<input type="text" name="cpf">
+	<br><br>
+	<button type="submit">SALVAR</button>
+
+	<a href="/"> <button type="button">CANCELAR</button> </a>
+
+</form>
+{% endblock %}

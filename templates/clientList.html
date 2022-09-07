@@ -1,0 +1,17 @@
+{% extends "modelPage.html" %}
+
+{% block content %}
+
+<main class="clientList w-100 m-auto">
+
+    {% for client in clients %}
+    <div class="alert alert-info" role="alert">
+        <p><strong>Documento: </strong> {{ client.cpf }} | <strong>Email: </strong> {{ client.email }}</p>
+    </div>
+    {% endfor %}
+
+    <a href="/">
+        <button type="submit" class="w-100 btn btn-info mb-3 col-4">Voltar</button>
+    </a>
+</main>
+{% endblock %}

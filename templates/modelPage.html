@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Cadastro de Clientes</title>
     {% load static %}
 
     <!-- Bootstrap CSS -->
@@ -12,35 +12,13 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+<header>
+    {% include "modelHeader.html" %}
+</header>
+<body>
+{% block content %} {% endblock %}
 
-<body class="centeredBody">
-
-<main class="centeredForm w-100 m-auto">
-    <h3 class="mb-4">Entrar como Admin</h3>
-    <form method="post">{% csrf_token %}
-        <div class="formFloating mb-2">
-            <input type="text" class="form-control form-control-lg" id="loginUsername" name="loginUsername"
-                   placeholder="Nome de usuário">
-        </div>
-        <div class="formFloating mb-3">
-            <input type="password" class="form-control form-control-lg" id="loginPassword" name="loginPassword"
-                   placeholder="Senha">
-        </div>
-        <button type="submit" class="w-100 btn btn-info mb-4 btn-lg" name="loginButton">Entrar</button>
-    </form>
-
-    {% for error in errors %}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{error}}
-        <button type="button" class="close" data-dismiss="alert">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endfor %}
-
-</main>
-
-<!-- Scripts: jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

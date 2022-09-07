@@ -1,0 +1,29 @@
+{% extends "modelPage.html" %}
+
+{% block content %}
+
+<main class="centeredForm w-100 m-auto">
+    <form method="post">{% csrf_token %}
+        <div class="mb-2">
+            <input type="email" class="form-control form-control-lg" name="registerClientEmail"
+                   placeholder="Email do Cliente">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control form-control-lg" name="registerClientDocument"
+                   placeholder="Documento do Cliente">
+        </div>
+        <button type="submit" class="w-100 btn btn-info mb-2">Salvar</button>
+    </form>
+    <a href="/"><button type="button" class="w-100 btn btn-dark mb-4">Cancelar</button></a>
+
+    {% for error in errors %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ error }}
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+</main>
+{% endblock %}

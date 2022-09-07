@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  client-register-django-app:
+    build: .
+    container_name: client-register-django-app
+    image: client-register-django-app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
